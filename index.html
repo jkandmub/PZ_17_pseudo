@@ -1,33 +1,38 @@
 <!doctype html>
 <html lang="ru">
-  <head>
+<head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Интерактивные карточки</title>
-    <link rel="stylesheet" href="./styles/style.css" />
-  </head>
-  <body>
-    <main>
-      <section class="banner">
-        <p>Городские истории</p>
-        <h1>Наведите курсор и исследуйте</h1>
-        <a class="banner__link" href="#cards">Перейти к карточкам</a>
-      </section>
-      <section id="cards" class="cards">
-        <a class="card" href="#"
-          ><span>01</span>
-          <h2>Двор</h2>
-          <p>История тихого двора.</p></a
-        ><a class="card" href="#"
-          ><span>02</span>
-          <h2>Мост</h2>
-          <p>Маршрут через старый мост.</p></a
-        ><a class="card" href="#"
-          ><span>03</span>
-          <h2>Вывеска</h2>
-          <p>Старый неоновый знак.</p></a
-        >
-      </section>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <section class="banner">
+        <h1>Интерактивный баннер</h1>
+        <!-- Для поддержки навигации по Tab карточки/ссылки должны быть интерактивными элементами (href) -->
+        <a href="#" class="banner__link">Подробнее</a>
+    </section>
+
+    <main class="cards">
+        <!-- Обычные карточки (ссылки, чтобы работал focus-visible и Tab) -->
+        <a href="#" class="card card--primary">
+            <h2>Карточка 1</h2>
+            <p>Основной тип карточки с декоративными элементами.</p>
+        </a>
+        
+        <!-- Выделенная карточка (исключается через :not) -->
+        <a href="#" class="card card--featured">
+            <h2>Карточка 2</h2>
+            <p>Выделенная карточка. На неё не действует эффект масштабирования при наведении.</p>
+        </a>
+        
+        <!-- Вторая обычная карточка (другой вариант для :is) -->
+        <a href="#" class="card card--secondary">
+            <h2>Карточка 3</h2>
+            <p>Второй вариант обычной карточки, объединенный с первым через :is().</p>
+        </a>
     </main>
-  </body>
+
+</body>
 </html>
